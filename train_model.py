@@ -7,7 +7,7 @@ import xgboost as xgb
 from predictor import prepare_features
 
 # 假设数据存储在 CSV 文件中
-data = pd.read_csv("hospital_data.csv")
+data = pd.read_csv("data/hospital_data.csv")
 
 # 假设数据有以下列：病情描述, 性别, 年龄, 住院天数
 texts = data["病情描述"].values
@@ -30,4 +30,4 @@ print(f"模型得分: {model.score(X_test, y_test)}")
 
 # 保存训练好的模型
 import joblib
-joblib.dump(model, 'hospital_stay_predictor_model.pkl')
+joblib.dump(model, 'models/hospital_stay_model.pkl')
